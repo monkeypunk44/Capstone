@@ -4,7 +4,7 @@ import React from "react";
 
 export const Navigation = () => {
   return (
-    <Flex flexDirection="row" color="black">
+    <Flex maxW={{ sm: 540, md: 768, lg: 960, xl: 1200 }}>
       <Link as={RouteLink} to="/contact" ml="3rem">
         Contact
       </Link>
