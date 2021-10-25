@@ -21,7 +21,7 @@ async function run() {
       )
     ).map((x) => x.textContent);
   });
-  await fs.writeFile("SSPrices.txt", prices.join("\r\n"), function (err) {
+  await fs.writeFile("SSPrices.json", prices.join("\r\n"), function (err) {
     if (err) return console.log(err);
     console.log();
   });
@@ -32,7 +32,7 @@ async function run() {
       )
     ).map((x) => x.textContent);
   });
-  await fs.writeFile("SSItems.txt", items.join("\r\n"), function (err) {
+  await fs.writeFile("SSItems.json", items.join("\r\n"), function (err) {
     if (err) return console.log(err);
     console.log();
   });
