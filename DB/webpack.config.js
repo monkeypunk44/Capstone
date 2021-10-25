@@ -9,6 +9,6 @@ module.exports = {
     filename: "bundle.js",
   },
   resolve: {
-    modules: [path.resolve(__dirname, 'node_modules'), 'node_modules']
-  }
+    modules: [path.resolve(__dirname, "node_modules"), "../node_modules"],
+  },
 };
