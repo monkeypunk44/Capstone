@@ -20,7 +20,7 @@ const firebaseConfig = {
   appId: "1:860548385515:web:52633e3005c51c3fd88cae",
 };
 
-const fs = require("fs").promises;
+const fs = require("fs");
 const readline = require("readline");
 // command line argument getter
 // var items = process.argv[2];
@@ -33,27 +33,17 @@ const FireBaseApp = initializeApp(firebaseConfig);
 // Get DB
 const db = getFirestore(FireBaseApp);
 
-async function processLineByLine() {
-  const fileStream = fs.createReadStream(
-    "c:/Users/ajblo/OneDrive/Documents/GitHub/Capstone/SSItems.txt"
-  );
-
-  const rl = readline.createInterface({
-    input: fileStream,
-    crlfDelay: Infinity,
-  });
-  // Note: we use the crlfDelay option to recognize all instances of CR LF
-  // ('\r\n') in input.txt as a single line break.
-
-  for await (const line of rl) {
-    // Each line in input.txt will be successively available here as `line`.
-    console.log(`Line from file: ${line}`);
+fs.readFile("SSitems.txt", (error, data) => {
+  if (error) {
+    console.log("error:", error.message);
+    throw error;
   }
-}
+  console.log(`file: ${data}`);
+});
 
 export async function AddData(db) {
   const str = "Products/";
-  const path = processLineByLine();
+  //const path = processLineByLine();
   //const price = processLineByLine(prices);
   //const docRef = doc(db, "Stores/SuperStore");
   // while (path !== "") {
