@@ -1,4 +1,4 @@
-import React from "react";
+import React from 'react'
 
 import {
   ChakraProvider,
@@ -24,18 +24,20 @@ import {
   MenuDivider,
   Icon,
   createIcon,
-} from "@chakra-ui/react";
-import { HamburgerIcon, CloseIcon } from "@chakra-ui/icons";
+  Button,
+  ButtonGroup,
+} from '@chakra-ui/react'
+import { HamburgerIcon, CloseIcon } from '@chakra-ui/icons'
 
 import {
   BrowserRouter as Router,
   Switch,
   Route,
   Link as RouteLink,
-} from "react-router-dom";
+} from 'react-router-dom'
 
-import { theme } from "./theme";
-import { Navigation } from "./Navigation";
+import { theme } from './theme'
+import { Navigation } from './Navigation'
 
 const App = () => {
   return (
@@ -49,20 +51,23 @@ const App = () => {
           minH="100vh"
           flexDirection="column"
         >
-          <Heading bg="blush">Pricer</Heading>
+          <Heading bg="blush" textAlign="center">
+            Pricer
+          </Heading>
           {/* box that contains menu and search bar */}
-          <Box bg="blush" h="20">
+          <Flex bg="blush" alignContent="center" justifyContent="space-between">
             <Menu>
               <MenuButton
                 w="15%"
                 bg="bb"
                 px={4}
                 py={2}
-                _hover={{ bg: "mint" }}
-                _expanded={{ bg: "blue.400" }}
-                _focus={{ boxShadow: "outline" }}
+                textColor="black"
+                _hover={{ bg: 'mint' }}
+                _expanded={{ bg: 'blue.400' }}
+                _focus={{ boxShadow: 'outline' }}
               >
-                Something
+                Settings
               </MenuButton>
               <MenuList>
                 <MenuItem as={RouteLink} to="/account">
@@ -77,11 +82,25 @@ const App = () => {
               px={4}
               py={2}
               variant="flushed"
-              _hover={{ bg: "mint" }}
-              _focus={{ boxShadow: "outline" }}
+              _hover={{ bg: 'mint' }}
+              _focus={{ boxShadow: 'outline' }}
               placeholder="What can I help you Find?"
             />
-          </Box>
+            <Button
+              colorScheme="blue"
+              textColor="black"
+              w="24%"
+              bg="bb"
+              px={4}
+              py={2}
+              _hover={{ bg: 'mint' }}
+              _expanded={{ bg: 'blue.400' }}
+              variant="flushed"
+            >
+              Login/Create Account
+            </Button>
+          </Flex>
+
           <Divider orientation="horizontal" />
           <Box mx="auto">
             <Switch>
@@ -94,7 +113,7 @@ const App = () => {
         </Flex>
       </Router>
     </ChakraProvider>
-  );
-};
+  )
+}
 
-export default App;
+export default App
