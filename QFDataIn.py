@@ -72,8 +72,9 @@ def ProcessItems():
 
   # mass data entery
   while count < len(Iarray):
-    doc_ref = db.collection(u'Stores/QualityFoods/Products').document(u'{}'.format(Iarray[count]))
+    doc_ref = db.collection(u'Stores/QualityFoods/Products').document()
     doc_ref.set({
+        u'Product': Iarray[count],
         u'Price': Parray[count],
         u'Sale': False,
         u'SalePrice': 0,

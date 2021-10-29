@@ -1,7 +1,5 @@
 // Import the functions you need from the SDKs you need
 import { initializeApp } from "firebase/app";
-import { getAnalytics } from "firebase/analytics";
-import { getAuth, onAuthStateChanged } from "firebase/auth";
 import {
   getFirestore,
   collection,
@@ -9,12 +7,12 @@ import {
   getDoc,
   setDoc,
   doc,
+  get,
+  where,
+  query,
+  limit,
 } from "firebase/firestore";
-import { getApples } from "../dist/Query.js";
-// https://firebase.google.com/docs/web/setup#available-libraries
 
-// Your web app's Firebase configuration
-// For Firebase JS SDK v7.20.0 and later
 const firebaseConfig = {
   apiKey: "AIzaSyAURAAyiw0MKqx20VrcYHd9b-UPH92YzCY",
   authDomain: "capstone-5d38a.firebaseapp.com",
@@ -24,19 +22,12 @@ const firebaseConfig = {
   appId: "1:860548385515:web:52633e3005c51c3fd88cae",
 };
 
-// Initialize Firebase
 const FireBaseApp = initializeApp(firebaseConfig);
-//const analytics = getAnalytics(FireBaseApp);
-
-const auth = getAuth(FireBaseApp);
 const db = getFirestore(FireBaseApp);
 
-onAuthStateChanged(auth, (user) => {
-  if (user != null) {
-    console.log("Logged in!");
-  } else {
-    console.log("No User");
-  }
-});
+const SS = collection(db, "Stores/SuperStore/Products");
+const QF = collection(db, "Stores/QualityFoods/Products");
 
-getApples();
+export async function getApples() {
+  const custQuery = query(SS, where("Products", "==", "apple"), limit(10));
+}

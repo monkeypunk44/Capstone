@@ -48,18 +48,24 @@ const App = () => {
           mx="auto"
           w="100%"
           bg="white"
-          minH="100vh"
+          minH="97vh"
           flexDirection="column"
         >
-          <Heading bg="blush" textAlign="center">
-            Pricer
-          </Heading>
-          {/* box that contains menu and search bar */}
-          <Flex bg="blush" alignContent="center" justifyContent="space-between">
+          <Flex bg="blush" height="min-content" alignContent="center">
+            <Heading bg="blush">Pricer</Heading>
+          </Flex>
+          {/* Flex that contains menu, search bar and login button */}
+          <Flex
+            bg="blush"
+            alignContent="center"
+            justifyContent="space-between"
+            height="14"
+          >
             <Menu>
               <MenuButton
-                w="15%"
+                w="24%"
                 bg="bb"
+                height="10"
                 px={4}
                 py={2}
                 textColor="black"
@@ -90,6 +96,7 @@ const App = () => {
               colorScheme="blue"
               textColor="black"
               w="24%"
+              height="10"
               bg="bb"
               px={4}
               py={2}
@@ -102,15 +109,15 @@ const App = () => {
           </Flex>
 
           <Divider orientation="horizontal" />
-          <Box mx="auto">
+          <Flex mx="auto">
             <Switch>
               <Route path="/contact">Contact</Route>
               <Route path="/faq">FAQ</Route>
               <Route path="/account">Account</Route>
             </Switch>
-          </Box>
-          <Navigation />
+          </Flex>
         </Flex>
+        <Navigation />
       </Router>
     </ChakraProvider>
   )

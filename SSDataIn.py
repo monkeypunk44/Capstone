@@ -39,8 +39,9 @@ def ProcessItems():
   count = 0 
 
   while count < len(Iarray):
-    doc_ref = db.collection(u'Stores/SuperStore/Products').document(u'{}'.format(Iarray[count]))
+    doc_ref = db.collection(u'Stores/SuperStore/Products').document()
     doc_ref.set({
+        u'Product': Iarray[count],
         u'Price': Parray[count],
         u'Sale': False,
         u'SalePrice': 0,
