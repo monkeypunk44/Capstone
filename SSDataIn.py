@@ -4,7 +4,7 @@ from firebase_admin import firestore
 
 
 # Use a service account
-cred = credentials.Certificate('../capstone-5d38a-firebase-adminsdk-yqcur-7c8c8dcaa7.json')
+cred = credentials.Certificate('./capstone-5d38a-firebase-adminsdk-yqcur-7c8c8dcaa7.json')
 firebase_admin.initialize_app(cred)
 
 db = firestore.client()
