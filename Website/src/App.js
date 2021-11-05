@@ -52,7 +52,7 @@ const App = () => {
           flexDirection="column"
         >
           <Flex bg="blush" height="min-content" alignContent="center">
-            <Heading bg="blush">Pricer</Heading>
+            <Heading bg="blush">Good Pricer</Heading>
           </Flex>
           {/* Flex that contains menu, search bar and login button */}
           <Flex
