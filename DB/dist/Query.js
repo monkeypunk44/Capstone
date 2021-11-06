@@ -11,6 +11,7 @@ import {
   where,
   query,
   limit,
+  toString,
 } from "firebase/firestore";
 
 const firebaseConfig = {
@@ -29,5 +30,10 @@ const SS = collection(db, "Stores/SuperStore/Products");
 const QF = collection(db, "Stores/QualityFoods/Products");
 
 export async function getApples() {
-  const custQuery = query(SS, where("Products", "==", "apple"), limit(10));
+  const querySnapshot = await getDocs(
+    query(SS, where("Product", "==", "Apple"))
+  );
+  querySnapshot.forEach((snap) => {
+    console.log(`Document ${snap.id} contains ${JSON.stringify(snap.data())}`);
+  });
 }
