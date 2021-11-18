@@ -25,13 +25,28 @@ def OpenItems(id):
     Iarray[a] = Iarray[a].replace('\n',' ')
     a += 1 
   return(Iarray)
+
+def makeJSON():
+
+    Iarray = OpenItems("SSItems.txt")
+    Parray = OpenPrices("SSPrices.txt")
+    count = 0 
+    Products = {}
+    Products['SuperStore'] = []
+    while count < len(Iarray):
+
+        Products['SuperStore'].append({
+            'Product': Iarray[count],
+            'Price': Parray[count],
+            'Sale': False,
+            'SalePrice': 0,
+        })
+        count += 1
     
+    with open('data.json', 'w') as f:
+        json.dump(Products, f)  
 
-def ProcessItems():
-
-  # Iarray = OpenItems("SSItems.txt")
-  # Parray = OpenPrices("SSPrices.txt")
-  # count = 0 
+def ProcessJSON():
 
   myclient = pymongo.MongoClient("mongodb+srv://Admin:BvzV5L7bU1psvzz4@cluster0.2wysu.mongodb.net/GoodPricer?retryWrites=true&w=majority")
   mydb = myclient["GoodPricer"]
@@ -43,16 +58,6 @@ def ProcessItems():
   mycol.insert_one(file)
 
   myclient.close()
-  # while count < 1:
-    
-  #   Product = {
-  #       'Product': Iarray[count],
-  #       'Price': Parray[count],
-  #       'Sale': False,
-  #       'SalePrice': 0,
-  #   } 
-    
-  #   x = mycol.insert_one(Product)
-  #   print("\n\n")
-  #   count += 1
-ProcessItems()
+
+makeJSON()
+ProcessJSON()
