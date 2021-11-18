@@ -1,15 +1,8 @@
-import firebase_admin
-from firebase_admin import credentials
-from firebase_admin import firestore
+import pymongo
+import json
 
-
-# Use a service account
-cred = credentials.Certificate('./capstone-5d38a-firebase-adminsdk-yqcur-7c8c8dcaa7.json')
-firebase_admin.initialize_app(cred)
-
-db = firestore.client()
-def OpenPrices():
-  file1 = open("SSPrices.txt","r")
+def OpenPrices(id):
+  file1 = open(id,"r")
   lines = file1.readlines()
   Parray = []
 
@@ -22,38 +15,44 @@ def OpenPrices():
     count += 1
   return(Parray)
 
-def OpenItems():
-  file1 = open("SSItems.txt","r")
+def OpenItems(id):
+  file1 = open(id,"r")
   lines = file1.readlines()
   Iarray = []
-
+  a = 0
   for line in lines:
     Iarray.append(line)
+    Iarray[a] = Iarray[a].replace('\n',' ')
+    a += 1 
   return(Iarray)
     
 
 def ProcessItems():
 
-  Iarray = OpenItems()
-  Parray = OpenPrices()
-  count = 0 
+  # Iarray = OpenItems("SSItems.txt")
+  # Parray = OpenPrices("SSPrices.txt")
+  # count = 0 
 
-  while count < len(Iarray):
-    doc_ref = db.collection(u'Stores/SuperStore/Products').document()
-    doc_ref.set({
-        u'Product': Iarray[count],
-        u'Price': Parray[count],
-        u'Sale': False,
-        u'SalePrice': 0,
-    })
-    count += 1
+  myclient = pymongo.MongoClient("mongodb+srv://Admin:BvzV5L7bU1psvzz4@cluster0.2wysu.mongodb.net/GoodPricer?retryWrites=true&w=majority")
+  mydb = myclient["GoodPricer"]
+  mycol= mydb['Stores']
 
-def LookAtItems():
+  with open('data.json') as f:
+    file = json.load(f)
 
-  users_ref = db.collection(u'Stores/SuperStore/Products')
-  docs = users_ref.stream()
+  mycol.insert_one(file)
 
-  for doc in docs:
-      print(f'{doc.id} => {doc.to_dict()}')
-
+  myclient.close()
+  # while count < 1:
+    
+  #   Product = {
+  #       'Product': Iarray[count],
+  #       'Price': Parray[count],
+  #       'Sale': False,
+  #       'SalePrice': 0,
+  #   } 
+    
+  #   x = mycol.insert_one(Product)
+  #   print("\n\n")
+  #   count += 1
 ProcessItems()

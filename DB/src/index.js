@@ -1,42 +1,38 @@
-// Import the functions you need from the SDKs you need
-import { initializeApp } from "firebase/app";
-import { getAnalytics } from "firebase/analytics";
-import { getAuth, onAuthStateChanged } from "firebase/auth";
-import {
-  getFirestore,
-  collection,
-  getDocs,
-  getDoc,
-  setDoc,
-  doc,
-} from "firebase/firestore";
-import { getApples } from "../dist/Query.js";
-// https://firebase.google.com/docs/web/setup#available-libraries
+'use strict';
 
-// Your web app's Firebase configuration
-// For Firebase JS SDK v7.20.0 and later
-const firebaseConfig = {
-  apiKey: "AIzaSyAURAAyiw0MKqx20VrcYHd9b-UPH92YzCY",
-  authDomain: "capstone-5d38a.firebaseapp.com",
-  projectId: "capstone-5d38a",
-  storageBucket: "capstone-5d38a.appspot.com",
-  messagingSenderId: "860548385515",
-  appId: "1:860548385515:web:52633e3005c51c3fd88cae",
-};
+const express = require('express');
+const app = express();
 
-// Initialize Firebase
-const FireBaseApp = initializeApp(firebaseConfig);
-//const analytics = getAnalytics(FireBaseApp);
+const cors = require('cors');
+const MongoClient = require("mongodb").MongoClient;
 
-const auth = getAuth(FireBaseApp);
-const db = getFirestore(FireBaseApp);
+const CONNECTION_URL = "mongodb://....................";
+const DATABASE_NAME = "beonaiunddce852";
+const COLLECTION_NAME = "Resources";
 
-onAuthStateChanged(auth, (user) => {
-  if (user != null) {
-    console.log("Logged in!");
-  } else {
-    console.log("No User");
-  }
+app.use(express.urlencoded({ extended: true }));
+app.use(cors());
+
+app.get("/data", (request, response) => {
+    collection.find({}).toArray((error, result) => {
+        if(error) {
+            return response.status(500).send(error);
+        }
+        response.send(result);
+      });
 });
 
-getApples();
+var database, collection;
+
+app.listen(8080, () => {
+    MongoClient.connect(CONNECTION_URL, { useNewUrlParser: true, useUnifiedTopology: true }, (error, client) => {
+        if(error) {
+            throw error;
+        }
+
+        database = client.db(DATABASE_NAME);
+        collection = database.collection(COLLECTION_NAME);
+
+        console.log("Running on port 8080 - connected to `" + DATABASE_NAME + "`\nto test, make a request to http://localhost:8080/data");
+    });
+});
