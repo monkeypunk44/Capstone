@@ -71,7 +71,7 @@ def ProcessJSON(CWord):
   myclient = pymongo.MongoClient("mongodb+srv://Admin:BvzV5L7bU1psvzz4@cluster0.2wysu.mongodb.net/GoodPricer?retryWrites=true&w=majority")
   mydb = myclient["GoodPricer"]
   mycol= mydb['SuperStore']
-  myquery = {"Product" : {"$regex":CWord, '$options':'m'}}
+  myquery = {"Product" : {"$regex":CWord, '$options':'i'}}
   
   result = mycol.find(myquery)
 
