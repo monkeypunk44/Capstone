@@ -1,121 +1,121 @@
 
-        Apples Quality Foods 5 Lb Bag Instore Bagged
-        Produce > Fruits > Apples > 
+        Vienna New York Style Corned Beef   
+        Deli > Deli Meats > Beef > 
     
-        Apples Royal Gala British Columbia Extra Fancy
-        Produce > Fruits > Apples > 
+        Qf Instore Cooked Black Angus Aaa Roast Beef 21 Day Aged
+        Deli > Deli Meats > Beef > 
     
-        Pineapple Super Sweet Hawaii/Costa Rica Extra Large
-        Produce > Fruits > Tropicals - Avocados, Kiwis, Mangoes, Papayas, Pineapples, etc. > 
+        Continental Roast Beef 
+        Deli > Deli Meats > Beef > 
     
-        Apples Ambrosia B.C. Extra Fancy
-        Produce > Fruits > Apples > 
+        Island Pride Gourmet Beef Burgers 
+        Meat & Seafood > Frozen Meat Case items > Beef > 
     
-        Sunrype Unsweetened Pure Apple Juice 100% Juice not From Concentrate
-        Grocery > Beverages > Juices > Sunrype Juice > 
+        Schneiders Country Naturals Beef Burgers 
+        Meat & Seafood > Frozen Meat Case items > Beef > 
     
-        Apples Granny Smith Washington Extra Fancy
-        Produce > Fruits > Apples > 
+        Outlaw Beef Burgers 
+        Meat & Seafood > Frozen Meat Case items > Beef > 
     
-        Apples Honey Crisp  Washington Fancy Grade
-        Produce > Fruits > Apples > 
+        Belmont Meats Pure Beef Burgers Grass Fed 4 X 5 Oz
+        Meat & Seafood > Frozen Meat Case items > Beef > 
     
-        Apples Braeburn  Washington Extra Fancy
-        Produce > Fruits > Apples > 
+        The Keg Steakhouse Prime Rib Beef Burgers 6 Burgers
+        Meat & Seafood > Frozen Meat Case items > Beef > 
     
-        Apples Fuji Washington Premium
-        Produce > Fruits > Apples > 
+        The Keg Steakhouse 8oz Prime Rib Beef Burgers 4 Burgers
+        Meat & Seafood > Frozen Meat Case items > Beef > 
     
-        Organic Apples Royal Gala Bag
-        Produce > Organic Fruit > Apples > 
+        Belmont Meats Homestyle Angus Beef Burgers 
+        Meat & Seafood > Frozen Meat Case items > Beef > 
     
-        Apples Spartan  British Columbia 
-        Produce > Fruits > Apples > 
+        Top Grass Beef Burgers Uncooked
+        Meat & Seafood > Frozen Meat Case items > Beef > 
     
-        Apples Red Delicious Washington Extra Fancy
-        Produce > Fruits > Apples > 
+        Tomatoes Beefsteak USA, Mexico Extra Large
+        Produce > Vegetables > Tomatoes > 
     
-        Dole Pineapple Tidbits Packed in Pineapple Juice
-        Grocery > Fruits & Vegetables > Fruit - Canned, Cups & Bowls > Pineapple > 
+        Canadian Black Angus Lean Ground Beef 86% Family Pack
+        Meat & Seafood > Fresh Meat Counter > Beef Black Angus Western Canadian AAA 21 Day Aged > Ground Beef & Stewing Beef > 
     
-        Organic Apples Ambrosia B.C. Grown
-        Produce > Organic Fruit > Apples > 
+        Canadian Black Angus Lean Ground Beef 86% 
+        Meat & Seafood > Fresh Meat Counter > Beef Black Angus Western Canadian AAA 21 Day Aged > Ground Beef & Stewing Beef > 
     
-        Mini Apple Strudel 6 Pack 
-        Bakery > Bakery Sweet Goods > Pastries > 
+        Canadian Black Angus Extra Lean Ground Beef 91% Family Pack
+        Meat & Seafood > Fresh Meat Counter > Beef Black Angus Western Canadian AAA 21 Day Aged > Ground Beef & Stewing Beef > 
     
-        Organic Apples Royal Gala Large
-        Produce > Organic Fruit > Apples > 
+        Canadian Black Angus Extra Lean Ground Beef 91% 
+        Meat & Seafood > Fresh Meat Counter > Beef Black Angus Western Canadian AAA 21 Day Aged > Ground Beef & Stewing Beef > 
     
-        Apples Pink Lady Washington Fancy
-        Produce > Fruits > Apples > 
+        Beef Liver 
+        Meat & Seafood > Fresh Meat Counter > Beef Black Angus Western Canadian AAA 21 Day Aged > Liver, Kidney & Heart > 
     
-        8" Apple Pie 
-        Bakery > Pies > 
+        Schneiders Original Recipe All Beef Wieners 
+        Meat & Seafood > Packaged Cooked and Smoked Meats > Wieners & Smokies > 
     
-        Sunrype Apple Sauce  Unsweetened 
-        Grocery > Fruits & Vegetables > Fruit - Canned, Cups & Bowls > Apple & Apricots > 
+        Canadian Lean Ground Beef Hamburger Patties 
+        Meat & Seafood > Fresh Meat Counter > Beef Black Angus Western Canadian AAA 21 Day Aged > Ground Beef & Stewing Beef > 
     
-        Apple Fritter Bin #942
-        Bakery > Bakery Sweet Goods > Donuts > 
+        Hereford Corned Beef   
+        Grocery > Canned Meat, Dinners & Chili > Meats > 
     
-        Apples Golden Delicious Apples Washington Extra Fancy
-        Produce > Fruits > Apples > 
+        Canadian Black Angus Stewing Beef Family Pack
+        Meat & Seafood > Fresh Meat Counter > Beef Black Angus Western Canadian AAA 21 Day Aged > Ground Beef & Stewing Beef > 
     
-        Dole Pineapple Chunks Packed in Pineapple Juice
-        Grocery > Fruits & Vegetables > Fruit - Canned, Cups & Bowls > Pineapple > 
+        Canadian Black Angus Stewing Beef 
+        Meat & Seafood > Fresh Meat Counter > Beef Black Angus Western Canadian AAA 21 Day Aged > Ground Beef & Stewing Beef > 
     
-        Apples Mcintosh Canada 
-        Produce > Fruits > Apples > 
+        Beef Hearts 
+        Meat & Seafood > Fresh Meat Counter > Beef Black Angus Western Canadian AAA 21 Day Aged > Grilling Steaks > 
     
-        Mott's Apple Sauce  Unsweetened 
-        Grocery > Fruits & Vegetables > Fruit - Canned, Cups & Bowls > Apple & Apricots > 
+        Canadian Black Angus Extra Lean Ground Round Beef 91% 
+        Meat & Seafood > Fresh Meat Counter > Beef Black Angus Western Canadian AAA 21 Day Aged > Ground Beef & Stewing Beef > 
     
-        Sunrype Blue Label Apple Juice   
-        Grocery > Beverages > Juices > Sunrype Juice > 
+        Buddig Corned Beef 
+        Meat & Seafood > Packaged Cooked and Smoked Meats > Sliced Packaged Meats > 
     
-        Sunrype 100% Pure Apple Juice   
-        Grocery > Beverages > Juices > Sunrype Juice > 
+        Sandwich - Roast Beef 
+        Deli > Ready to Eat (or Cook) Foods > Sandwiches, Wraps And Subs > 
     
-        Apples Quality Foods Granny Smith 4 Lb Mesh Bag
-        Produce > Fruits > Apples > 
+        Campbell's Beef with Vegetables & Barley Condensed Soup
+        Grocery > Soup & Rice > Canned & Tetra Pak Soup > Campbells Classic > 
     
-        Dole Crushed  Pineapple Packed in Pineapple Juice
-        Grocery > Fruits & Vegetables > Fruit - Canned, Cups & Bowls > Pineapple > 
+        Canadian Black Angus Extra Lean Ground Round Beef 91% Family Pack
+        Meat & Seafood > Fresh Meat Counter > Beef Black Angus Western Canadian AAA 21 Day Aged > Ground Beef & Stewing Beef > 
     
-        9" Apple Pie 
-        Bakery > Pies > 
+        Canadian Black Angus Beef Stir Fry 
+        Meat & Seafood > Fresh Meat Counter > Beef Black Angus Western Canadian AAA 21 Day Aged > Simmering & Marinating Steaks > 
     
-        Omega Nutrition Organic Apple Cider Vinegar   
-        Grocery > Condiments, Sauces & Coatings > Vinegar > Other Brands > 
+        Schneiders Traditional All Beef Bologna 
+        Meat & Seafood > Packaged Cooked and Smoked Meats > Sliced Packaged Meats > 
     
-        Quality Fresh Cored Pineapple 
-        Produce > Fruit / Veggie - Salad / Trays > 
+        Jack Link's Beef Jerky Original
+        Grocery > Snacks, Cookies & Chips > Jerky > 
     
-        Santa Cruz Organic Apple Juice   
-        Grocery > Beverages > Juices > Santa Cruz Organic Juice > 
+        Harvest Naturally Smoked All Beef Wieners Gluten Free No MSG Added
+        Meat & Seafood > Packaged Cooked and Smoked Meats > Wieners & Smokies > 
     
-        Dole Pineapple Slices Packed in Pineapple Juice
-        Grocery > Fruits & Vegetables > Fruit - Canned, Cups & Bowls > Pineapple > 
+        Beef Kidney 
+        Meat & Seafood > Fresh Meat Counter > Beef Black Angus Western Canadian AAA 21 Day Aged > Liver, Kidney & Heart > 
     
-        Sunrype 100% Pure Apple Juice   
-        Grocery > Beverages > Juices > Sunrype Juice > 
+        Freshly Made By Our Butchers Angus Beef Sausage 
+        Meat & Seafood > Fresh Meat Counter > Sausage > Other Brands > 
     
-        Applesnax Organic Apple Sauce Unsweetened
-        Grocery > Fruits & Vegetables > Fruit - Canned, Cups & Bowls > Apple & Apricots > 
+        Harvest Naturally Smoked All Beef Wieners 
+        Meat & Seafood > Packaged Cooked and Smoked Meats > Wieners & Smokies > 
     
-        Harvest Applewood Bacon 
-        Meat & Seafood > Packaged Cooked and Smoked Meats > Bacon > 
+        Campbell's Vegetable Beef Condensed Soup
+        Grocery > Soup & Rice > Canned & Tetra Pak Soup > Campbells Classic > 
     
-        Mott's Fruitsations Apple Sauce   
-        Grocery > Fruits & Vegetables > Fruit - Canned, Cups & Bowls > Apple & Apricots > 
+        Smart Ones Home Style Beef Pot Roast 
+        Frozen Foods > Dinners & Pies > Dinner Entrees > 
     
-        Apple Valley 8" Apple Pie 
-        Bakery > Pies > 
+        Freybe All Beef Smokies Sausage 
+        Meat & Seafood > Packaged Cooked and Smoked Meats > Wieners & Smokies > 
     
-        Tropicana Orchard Style Apple Juice   
-        Grocery > Beverages > Juices > Chilled Juices > Tropicana > 
+        Campbell's Beef Broth Condensed Soup
+        Grocery > Soup & Rice > Canned & Tetra Pak Soup > Broth > 
     
-        Sunrype Apple Sauce  Regular 
-        Grocery > Fruits & Vegetables > Fruit - Canned, Cups & Bowls > Apple & Apricots > 
+        Jack Link's Beef Jerky Teriyaki
+        Grocery > Snacks, Cookies & Chips > Jerky > 
     

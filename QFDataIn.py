@@ -1,15 +1,10 @@
-import firebase_admin
-from firebase_admin import credentials
-from firebase_admin import firestore
+import pymongo
+import json
+import re
+from collections import Counter 
 
-
-# Use a service account
-cred = credentials.Certificate('./capstone-5d38a-firebase-adminsdk-yqcur-7c8c8dcaa7.json')
-firebase_admin.initialize_app(cred)
-
-db = firestore.client()
-def OpenPrices():
-  file1 = open("QFPrices.txt","r")
+def OpenPrices(id):
+  file1 = open(id,"r")
   lines = file1.readlines()
   Parray = []
 
@@ -19,6 +14,7 @@ def OpenPrices():
     if line.strip():
       Parray.append(line)
       Parray[count] = Parray[count].replace('ea','')
+      Parray[count] = Parray[count].replace('/100gr','')
       # removes everything before the word "approx" and everything after "/" leaving only a number
       if "approx" in Parray[count]:
         price = Parray[count]
@@ -44,8 +40,8 @@ def OpenPrices():
       count += 1
   return(Parray)
 
-def OpenItems():
-  file1 = open("QFItems.txt","r")
+def OpenItems(id):
+  file1 = open(id,"r")
   lines = file1.readlines()
   Iarray = []
 
@@ -62,31 +58,61 @@ def OpenItems():
         a += 1 
     count += 1  
   return(Iarray)
-    
-# add data into the database
-def ProcessItems():
 
-  Iarray = OpenItems()
-  Parray = OpenPrices()
+def makeJSON():
+  
+  Iarray = OpenItems("QFItems.txt")
+  Parray = OpenPrices("QFPrices.txt")
   count = 0 
-
-  # mass data entery
+  Products = []
+  # Products['QualityFoods'] = []
   while count < len(Iarray):
-    doc_ref = db.collection(u'Stores/QualityFoods/Products').document()
-    doc_ref.set({
-        u'Product': Iarray[count],
-        u'Price': Parray[count],
-        u'Sale': False,
-        u'SalePrice': 0,
-    })
-    count += 1
 
-def LookAtItems():
+      Products.append({
+          'Product': Iarray[count],
+          'Price': Parray[count],
+          'Sale': False,
+          'SalePrice': 0,
+      })
+      count += 1
+  
+  with open('QFdata.json', 'w') as f:
+      json.dump(Products, f) 
 
-  users_ref = db.collection(u'Stores/QualityFoods/Products')
-  docs = users_ref.stream()
+def FindCommonWord():
+  CWord = ""
+  most_occur = ""
+  with open('QFItems.txt') as f:
+    text = f.read()
 
-  for doc in docs:
-      print(f'{doc.id} => {doc.to_dict()}')
+  words = re.compile(r"[\w']+", re.U).findall(text)
+  
+  counts = Counter(words)
+  CWord = counts.most_common(1)[0][0]
+  print(CWord)
+  return CWord 
 
-ProcessItems()
+# add data into the database
+def ProcessJSON(CWord):
+
+  myclient = pymongo.MongoClient("mongodb+srv://Admin:BvzV5L7bU1psvzz4@cluster0.2wysu.mongodb.net/GoodPricer?retryWrites=true&w=majority")
+  mydb = myclient["GoodPricer"]
+  mycol= mydb['QualityFoods']
+  myquery = {"Product" : {"$regex":CWord, '$options':'m'}}
+
+  result = mycol.find(myquery)
+
+  # Enters Json if the query is empty
+  if(result.count() == 0 ):
+
+    with open('QFdata.json') as f:
+      file = json.load(f)
+    
+    mycol.insert_many(file)
+  
+
+  myclient.close()
+
+
+makeJSON()
+ProcessJSON(FindCommonWord())

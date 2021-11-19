@@ -24,7 +24,12 @@ def OpenItems(id):
   a = 0
   for line in lines:
     Iarray.append(line)
-    Iarray[a] = Iarray[a].replace('\n',' ')
+    Iarray[a] = Iarray[a].replace('\n','')
+    Iarray[a] = Iarray[a].replace('\u00c2','')
+    Iarray[a] = Iarray[a].replace('\u00a0','')
+    Iarray[a] = Iarray[a].replace('\u201e','')
+    Iarray[a] = Iarray[a].replace('\u00e2','')
+    Iarray[a] = Iarray[a].replace('\u00a2','')
     a += 1 
   return(Iarray)
 
@@ -38,6 +43,7 @@ def FindCommonWord():
   
   counts = Counter(words)
   CWord = counts.most_common(1)[0][0]
+
   return CWord 
 
 def makeJSON():
@@ -45,11 +51,10 @@ def makeJSON():
   Iarray = OpenItems("SSItems.txt")
   Parray = OpenPrices("SSPrices.txt")
   count = 0 
-  Products = {}
-  Products['SuperStore'] = []
+  Products = []
   while count < len(Iarray):
 
-      Products['SuperStore'].append({
+      Products.append({
           'Product': Iarray[count],
           'Price': Parray[count],
           'Sale': False,
@@ -57,27 +62,27 @@ def makeJSON():
       })
       count += 1
   
-  with open('data.json', 'w') as f:
+  with open('SSdata.json', 'w') as f:
       json.dump(Products, f) 
 
+# add data into the database
 def ProcessJSON(CWord):
-
-
+  
   myclient = pymongo.MongoClient("mongodb+srv://Admin:BvzV5L7bU1psvzz4@cluster0.2wysu.mongodb.net/GoodPricer?retryWrites=true&w=majority")
   mydb = myclient["GoodPricer"]
-  mycol= mydb['Stores']
-  print(mycol.find_one({},{"superstore": "Array", "Product": CWord}))
+  mycol= mydb['SuperStore']
+  myquery = {"Product" : {"$regex":CWord, '$options':'m'}}
+  
+  result = mycol.find(myquery)
 
-  if(mycol.find_one({},{"superstore": "Array", "Product": CWord}) == None):
-
-    with open('data.json') as f:
+  # enters Json if the query is empty
+  if(result.count() == 0 ):
+    with open('SSData.json') as f:
       file = json.load(f)
     
-    mycol.insert_one(file)
-  
+    mycol.insert_many(file)
 
   myclient.close()
 
 makeJSON()
-
 ProcessJSON(FindCommonWord())
