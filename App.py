@@ -5,9 +5,11 @@ import re
 from collections import Counter 
 from bson.json_util import dumps
 from flask import request, jsonify
+from flask_cors import CORS
+
 
 app = flask.Flask(__name__)
-app.config["DEBUG"] = True
+CORS(app)
 
 # Create some test data for our catalog in the form of a list of dictionaries.
 myclient = pymongo.MongoClient("mongodb+srv://Admin:BvzV5L7bU1psvzz4@cluster0.2wysu.mongodb.net/GoodPricer?retryWrites=true&w=majority")
@@ -24,6 +26,7 @@ def api_all():
     result = mycol.find(myquery)
     list_result = list(result)
     json_data = dumps(list_result)
+
     return json_data
 
 app.run()
