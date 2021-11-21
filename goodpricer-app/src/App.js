@@ -24,6 +24,8 @@ import { Navigation } from "./Navigation";
 import { theme } from "./theme";
 import axios from "axios";
 
+const el = require("events");
+
 function App() {
   const [productList, setsProductList] = useState([]);
   const [searchTerm, setSearchTerm] = useState(null);
@@ -36,9 +38,14 @@ function App() {
     fetchData();
   }, []);
 
+  const el = document.getElementsByClassName("cum");
+  el.addListener("keyup");
+
   const handler = (event) => {
-    setSearchTerm(event);
-    fetchData();
+    if (event.keyCode === "enter") {
+      setSearchTerm(event.target.value);
+      fetchData();
+    }
   };
 
   let itemsToRender;
@@ -111,9 +118,10 @@ function App() {
                 _hover={{ bg: "themeMint" }}
                 _focus={{ boxShadow: "outline" }}
                 placeholder="What can I help you Find?"
-                onChange={(event) => {
-                  handler(event.target.value);
+                onKeyPress={(event) => {
+                  handler(event);
                 }}
+                className="HandleSearch"
               />
               <Button
                 colorScheme="blue"
