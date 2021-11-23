@@ -13,18 +13,17 @@ import {
   Heading,
   Box,
   Input,
+  Button,
   Menu,
   MenuButton,
   MenuList,
   MenuItem,
-  Button,
 } from "@chakra-ui/react";
 
 import { Navigation } from "./Navigation";
 import { theme } from "./theme";
-import axios from "axios";
 
-const el = require("events");
+import axios from "axios";
 
 function App() {
   const [productList, setsProductList] = useState([]);
@@ -38,14 +37,10 @@ function App() {
     fetchData();
   }, []);
 
-  const el = document.getElementsByClassName("cum");
-  el.addListener("keyup");
-
-  const handler = (event) => {
-    if (event.keyCode === "enter") {
-      setSearchTerm(event.target.value);
-      fetchData();
-    }
+  var passer;
+  const handler = () => {
+    setSearchTerm(passer);
+    fetchData();
   };
 
   let itemsToRender;
@@ -77,27 +72,35 @@ function App() {
             minH="100vh"
             flexDirection="column"
           >
-            <Flex bg="themeBlush" height="min-content" alignContent="center">
-              <Heading bg="themeBlush">Good Pricer</Heading>
+            <Flex bg="themeBlush" alignContent="center">
+              <Heading bg="themeBlush" px="6rem">
+                Good Pricer
+              </Heading>
             </Flex>
             {/* Flex that contains menu, search bar and login button */}
             <Flex
               bg="themeBlush"
               alignContent="center"
-              justifyContent="space-between"
-              height="14"
+              justifyContent="space-around"
+              height="min-content"
+              flexWrap="wrap"
             >
               <Menu>
                 <MenuButton
-                  w="24%"
+                  fontSize="1rem"
+                  h="2.5rem"
+                  w="20rem"
                   bg="themeBB"
-                  height="10"
-                  px={4}
-                  py={2}
                   textColor="black"
                   _hover={{ bg: "themeMint" }}
                   _expanded={{ bg: "blue.400" }}
                   _focus={{ boxShadow: "outline" }}
+                  style={{
+                    borderBottomLeftRadius: "10px",
+                    borderBottomRightRadius: "10px",
+                    borderTopLeftRadius: "10px",
+                    borderTopRightRadius: "10px",
+                  }}
                 >
                   Settings
                 </MenuButton>
@@ -107,39 +110,69 @@ function App() {
                   </MenuItem>
                 </MenuList>
               </Menu>
-
-              <Input
-                w="30%"
-                bg="themeBB"
-                px={4}
-                py={2}
-                type="text"
-                variant="flushed"
-                _hover={{ bg: "themeMint" }}
-                _focus={{ boxShadow: "outline" }}
-                placeholder="What can I help you Find?"
-                onKeyPress={(event) => {
-                  handler(event);
-                }}
-                className="HandleSearch"
-              />
+              <Flex>
+                <Input
+                  w="18rem"
+                  bg="themeBB"
+                  h="2.5rem"
+                  fontSize="1rem"
+                  type="text"
+                  variant="flushed"
+                  id="inputID"
+                  _hover={{ bg: "themeMint" }}
+                  _focus={{ boxShadow: "outline" }}
+                  style={{
+                    borderBottomLeftRadius: "10px",
+                    borderTopLeftRadius: "10px",
+                  }}
+                  textAlign="center"
+                  placeholder="What can I help you Find?"
+                  onChange={(event) => {
+                    passer = event.target.value;
+                  }}
+                />
+                <Button
+                  type="button"
+                  bg="blue.100"
+                  w="5rem"
+                  h="2.5rem"
+                  fontSize="1rem"
+                  _hover={{ bg: "themeMint" }}
+                  _focus={{ boxShadow: "outline" }}
+                  style={{
+                    borderBottomLeftRadius: "0px",
+                    borderBottomRightRadius: "10px",
+                    borderTopLeftRadius: "0px",
+                    borderTopRightRadius: "10px",
+                  }}
+                  onClick={() => {
+                    handler();
+                  }}
+                >
+                  Search
+                </Button>
+              </Flex>
               <Button
-                colorScheme="blue"
                 textColor="black"
-                w="24%"
-                height="10"
+                w="20rem"
+                h="2.5rem"
                 bg="themeBB"
-                px={4}
-                py={2}
+                fontSize="1rem"
                 _hover={{ bg: "themeMint" }}
                 _expanded={{ bg: "blue.400" }}
                 variant="flushed"
+                style={{
+                  borderBottomLeftRadius: "10px",
+                  borderBottomRightRadius: "10px",
+                  borderTopLeftRadius: "10px",
+                  borderTopRightRadius: "10px",
+                }}
               >
                 Login/Create Account
               </Button>
             </Flex>
             <Flex mx="2rem">
-              <ul>{itemsToRender}</ul>
+              <ul fontSize="1rem">{itemsToRender}</ul>
             </Flex>
             <Box mb="2rem">
               {/* <Routes>

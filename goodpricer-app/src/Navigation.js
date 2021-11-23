@@ -13,11 +13,13 @@ export const Navigation = () => {
       px={{ md: "3rem", lg: "4rem" }}
       flexDirection={{ base: "column", lg: "row" }}
       py={{ base: "0.5rem", lg: "0" }}
+      alignContent="center"
+      justifyContent="space-around"
     >
-      <Link as={RouteLink} to="/contact" ml="3rem" textColor="black">
+      <Link as={RouteLink} to="/contact" textColor="black">
         Contact
       </Link>
-      <Link as={RouteLink} to="/faq" ml="3rem" textColor="black">
+      <Link as={RouteLink} to="/faq" textColor="black">
         FAQ
       </Link>
     </Flex>
