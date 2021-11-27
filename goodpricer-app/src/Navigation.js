@@ -1,4 +1,4 @@
-import { Flex, Link } from "@chakra-ui/react";
+import { Flex, Link, Text } from "@chakra-ui/react";
 import { Link as RouteLink } from "react-router-dom";
 import React from "react";
 
@@ -13,12 +13,15 @@ export const Navigation = () => {
       px={{ md: "3rem", lg: "4rem" }}
       flexDirection={{ base: "column", lg: "row" }}
       py={{ base: "0.5rem", lg: "0" }}
-      alignContent="center"
-      justifyContent="space-around"
+      alignContent="space-evenly"
+      justifyContent="space-evenly"
     >
-      <Link as={RouteLink} to="/contact" textColor="black">
-        Contact
-      </Link>
+      <Text as="a" href="tel:+1(902)-749-6454">
+        Contact: +1(902)-749-6454
+      </Text>
+      <Text>
+        <a href="mailto:143069b@acadiau.ca">143069b@acadiau.ca</a>
+      </Text>
       <Link as={RouteLink} to="/faq" textColor="black">
         FAQ
       </Link>

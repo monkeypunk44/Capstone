@@ -12,7 +12,7 @@ app = flask.Flask(__name__)
 CORS(app)
 
 # Create some test data for our catalog in the form of a list of dictionaries.
-myclient = pymongo.MongoClient("mongodb+srv://Admin:BvzV5L7bU1psvzz4@cluster0.2wysu.mongodb.net/GoodPricer?retryWrites=true&w=majority")
+myclient = pymongo.MongoClient("mongodb+srv://User:x7Zsno4aTrtZoMg0@cluster0.2wysu.mongodb.net/GoodPricer?")
 mydb = myclient["GoodPricer"]
 mycol= mydb['SuperStore']
 
