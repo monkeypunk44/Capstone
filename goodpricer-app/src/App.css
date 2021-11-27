@@ -36,7 +36,3 @@
     transform: rotate(360deg);
   }
 }
-#inputID::placeholder {
-  color: #292e2b;
-  opacity: 1;
-}
